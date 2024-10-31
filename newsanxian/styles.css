@@ -99,3 +99,28 @@ body {
     font-size: 18px;
     line-height: 1.6;
 }
+/* 連結裝飾*/
+footer {
+    background-color: #333; /* 深色背景 */
+    color: #fff; /* 白色文字 */
+    text-align: center; /* 文字居中 */
+    padding: 20px; /* 上下左右內邊距 */
+    border-top: 2px solid #1e90ff; /* 上邊框 */
+    margin-top: 40px; /* 上邊距 */
+    border-radius: 8px; /* 圓角 */
+}
+
+footer a {
+    color: #1e90ff; /* 藍色連結 */
+    margin: 0 10px; /* 連結之間的間距 */
+    text-decoration: none; /* 去掉下劃線 */
+}
+
+footer a:hover {
+    text-decoration: underline; /* 滑鼠懸停時顯示下劃線 */
+}
+
+footer p {
+    margin: 5px 0; /* 上下邊距 */
+    font-size: 14px; /* 字體大小 */
+}

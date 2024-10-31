@@ -112,3 +112,17 @@ footer {
     color: #fff;
     margin-top: 20px;
 }
+footer a {
+    color: #1e90ff; /* 藍色連結 */
+    margin: 0 10px; /* 連結之間的間距 */
+    text-decoration: none; /* 去掉下劃線 */
+}
+
+footer a:hover {
+    text-decoration: underline; /* 滑鼠懸停時顯示下劃線 */
+}
+
+footer p {
+    margin: 5px 0; /* 上下邊距 */
+    font-size: 14px; /* 字體大小 */
+}
