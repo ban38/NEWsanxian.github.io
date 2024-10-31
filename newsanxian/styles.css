@@ -53,9 +53,9 @@ body {
 /* 主頁背景 */
 .hero {
     background-image: url('school.jpg'); /* 替換為你的背景圖片 */
-    background-size: cover;
+    background-size: cover; /* 圖片會隨著視窗大小調整 */
     background-position: center;
-    height: 80vh;
+    min-height: 100vh; /* 視窗高度為 100% */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -80,6 +80,7 @@ body {
     font-size: 20px;
     color: #ddd;
 }
+
 
 /* 主內容區域 */
 .content {
