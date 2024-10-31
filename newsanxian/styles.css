@@ -55,7 +55,7 @@ body {
     background-image: url('school.jpg'); /* 替換為你的背景圖片 */
     background-size: cover; /* 圖片會隨著視窗大小調整 */
     background-position: center;
-    min-height: 100vh; /* 視窗高度為 100% */
+    min-height: 80vh; /* 視窗高度為 100% */
     display: flex;
     justify-content: center;
     align-items: center;
