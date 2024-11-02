@@ -128,6 +128,6 @@ footer p {
 .styled-image {
     border-radius: 10px; /* 圓角 */
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* 陰影效果 */
-    max-width: 50%; /* 適應不同螢幕大小 */
+    max-width: 100%; /* 適應不同螢幕大小 */
     height: auto; /* 保持圖片比例 */
 }
