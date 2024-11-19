@@ -162,82 +162,101 @@
                 <h3>兩層容器倒水問題</h3>
                 <p>這個程式碼解決了一個有兩層容器倒水的問題。我們有兩個寬度不同、且有高度限制的容器（上層和下層），每次會有一定的水量倒入這些容器。目標是將水量優先倒入下層容器，若下層滿了才倒入上層，並找出最終倒水結束後上層容器的最大水位高度。</p>
                 <pre>
-                        #include <iostream>
-                        #include <vector>
-                        #include <cmath>
+                        #include &lt; iostream &gt;
+                        #include &lt; vector &gt;
+                        #include &lt;cmath&gt;
                         using namespace std;
-                        
-                        int main() {
+
+                        int main()
+                        {
                             int n;
                             cin >> n;
-                        
+
                             int wo, wt, ho, ht;
                             cin >> wo >> wt >> ho >> ht;
-                        
+
                             int wo_area = wo * wo;
                             int wt_area = wt * wt;
-                        
+
                             vector<int> fill_volumes(n);
-                            for (int i = 0; i < n; ++i) {
+                            for (int i = 0; i < n; ++i)
+                            {
                                 cin >> fill_volumes[i];
                             }
-                        
-                            double best_height = 0;  // 上層杯子的最大水位高度
-                        
-                            for (int volume : fill_volumes) {
-                                double current_height = 0;  // 當前倒入後的水位高度
-                        
-                                if (ho > 0) {
-                                    // 優先倒入下層
-                                    if (volume <= wo_area * ho) {
+
+                            double best_height = 0; 
+
+                            for (int volume : fill_volumes)
+                            {
+                                double current_height = 0; 
+
+                                if (ho > 0)
+                                {
+                                    
+                                    if (volume <= wo_area * ho)
+                                    {
                                         current_height = static_cast<double>(volume) / wo_area;
-                                        ho -= current_height;
-                                    } else {
-                                        // 下層倒滿後剩餘量倒入上層
+                                        ho -= static_cast<int>(current_height);
+                                    }
+                                    else
+                                    {
+                                        
                                         int remaining_volume = volume - wo_area * ho;
-                                        current_height = ho;  // 下層已滿
+                                        current_height = ho; 
                                         ho = 0;
-                        
-                                        if (remaining_volume <= wt_area * ht) {
+
+                                        if (remaining_volume <= wt_area * ht)
+                                        {
                                             current_height += static_cast<double>(remaining_volume) / wt_area;
-                                            ht -= static_cast<double>(remaining_volume) / wt_area;
-                                        } else {
-                                            current_height += ht;  // 上層也倒滿
+                                            ht -= static_cast<int>(remaining_volume) / wt_area;
+                                        }
+                                        else
+                                        {
+                                            current_height += ht; 
                                             ht = 0;
                                             break;
                                         }
                                     }
-                                } else if (ht > 0) {
-                                    // 若下層已滿，直接倒入上層
-                                    if (volume <= wt_area * ht) {
+                                }
+                                else if (ht > 0)
+                                {
+                                    
+                                    if (volume <= wt_area * ht)
+                                    {
                                         current_height = ho + static_cast<double>(volume) / wt_area;
-                                        ht -= static_cast<double>(volume) / wt_area;
-                                    } else {
-                                        current_height = ho + ht;  // 上層倒滿
+                                        ht -= static_cast<int>(volume) / wt_area;
+                                    }
+                                    else
+                                    {
+                                        current_height = ho + ht; 
                                         ht = 0;
                                         break;
                                     }
                                 }
-                        
-                                // 更新最大水位高度
+
+                                
                                 best_height = max(best_height, current_height);
                             }
+
                         
-                            // 輸出結果，取上整
                             cout << static_cast<int>(ceil(best_height)) << endl;
-                        
+
                             return 0;
                         }
+
                 </pre>
             </div>
-
+            <h2>● 電子電路實習</h2>
+            <h3>1. 共集極放大電路</h3>
+            <img src="電路板1.jpg" alt="電路板" width="300";
+            
             
         </section>
     </main>
     <footer>
         <p>
-            <a href="https://github.com/ban38">MY GitHub</a> |
-            <a href="https://www.instagram.com/11_taiyi/?hl=zh-tw">Follow IG @11.taiyi</a>
+            <a href="https://github.com/ban38">MY GitHub</a> 
+            <a href="https://www.instagram.com/11_Sanxian/?hl=zh-tw">Follow IG @11_Sanxian</a>
         </p>
         <p>&copy; 2024 Sanxian . 保留所有權利.</p>
     </footer>
