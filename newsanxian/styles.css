@@ -1,0 +1,133 @@
+/* 全局樣式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f0f0f0;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.dark-mode {
+    background-color: #333;
+    color: #f0f0f0;
+}
+
+/* 頂部導航欄 */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px 20px;
+    color: #fff;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar nav a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar nav a:hover {
+    text-decoration: underline;
+}
+
+.search button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* 主頁背景 */
+.hero {
+    background-image: url('school.jpg'); /* 替換為你的背景圖片 */
+    background-size: cover; /* 圖片會隨著視窗大小調整 */
+    background-position: center;
+    min-height: 80vh; /* 視窗高度為 100% */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    position: relative;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 20px;
+    color: #ddd;
+}
+
+
+/* 主內容區域 */
+.content {
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.content h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.content p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+/* 連結裝飾*/
+footer {
+    background-color: #333; /* 深色背景 */
+    color: #fff; /* 白色文字 */
+    text-align: center; /* 文字居中 */
+    padding: 20px; /* 上下左右內邊距 */
+    border-top: 2px solid #1e90ff; /* 上邊框 */
+    margin-top: 40px; /* 上邊距 */
+    border-radius: 8px; /* 圓角 */
+}
+
+footer a {
+    color: #1e90ff; /* 藍色連結 */
+    margin: 0 10px; /* 連結之間的間距 */
+    text-decoration: none; /* 去掉下劃線 */
+}
+
+footer a:hover {
+    text-decoration: underline; /* 滑鼠懸停時顯示下劃線 */
+}
+
+footer p {
+    margin: 5px 0; /* 上下邊距 */
+    font-size: 14px; /* 字體大小 */
+}
+/*kosmos image 強調*/
+.styled-image {
+    border-radius: 10px; /* 圓角 */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* 陰影效果 */
+    max-width: 100%; /* 適應不同螢幕大小 */
+    height: auto; /* 保持圖片比例 */
+}

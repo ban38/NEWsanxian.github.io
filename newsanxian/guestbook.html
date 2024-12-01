@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-TW,zh-CN,en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>留言板</title>
+    <link rel="shortcut icon" type="image/x-icon" href="qq.jpg" />
+    <link rel="stylesheet" href="ppt.css">
+</head>
+<body>
+    <header class="navbar">
+        <h1>留言板</h1>
+        <nav>
+            <a href="index.html">首頁</a>
+            <a href="article.html">文章</a>
+            <a href="laboratory.html">實驗室</a>
+            <a href="about.html">關於我</a>
+            <a href="guestbook.html">留言板</a>
+        </nav>
+    </header>
+    <script>
+    document.querySelector("form").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    // Gather form data
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+
+    // Create an object to send as JSON
+    const formData = { name: name, email: email, message: message };
+
+    // Send data using Fetch API
+    fetch("send_email.php", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData)
+    })
+    .then(response => response.text())
+    .then(data => {
+        // Display success message
+        alert("Thank you for your message!");
+        // Clear the form
+        document.querySelector("form").reset();
+    })
+    .catch(error => {
+        console.error("Error:", error);
+        alert("There was an error submitting your message. Please try again later.");
+    });
+});
+</script>
+
+    
+    <main class="container">
+        <!-- 留言表單區域 -->
+        <section class="form-section">
+            <h2>留下您的留言</h2>
+            <form action="send_email.php" method="POST">
+                <label for="name">姓名：</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">電子郵件：</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">留言內容：</label>
+                <textarea id="message" name="message" required></textarea>
+                
+                <button type="submit">提交留言</button>
+            </form>
+        </section>
+        
+        <!-- 留言顯示區域 -->
+        <section class="comments-section">
+            <h2>留言區</h2>
+            
+        </section>
+    </main>
+    
+    
+    <footer>
+        <p>
+            <a href="https://github.com/ban38">MY GitHub</a> 
+            <a href="https://www.instagram.com/11_Sanxian/?hl=zh-tw">Follow IG @11_Sanxian</a>
+        </p>
+        <p>&copy; 2024 Sanxian . 保留所有權利.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-TW,zh-CN,en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanxian's Blog</title>
+    <link rel="shortcut icon" type="image/x-icon" href="qq.jpg" />
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-335078379"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-335078379');  // 請將此處替換為您的追蹤 ID
+    </script>
+</head>
+<body>
+    <!-- 頂部導航欄 -->
+    <header class="navbar">
+        <nav>
+            <a href="index.html">首頁</a>
+            <a href="article.html">文章</a>
+            <a href="laboratory.html">實驗室</a>
+            <a href="about.html">關於我</a>
+            <a href="guestbook.html">留言板</a>
+        </nav>
+        <div class="search">
+            <button>🔍 搜索</button>
+            <button class="theme-toggle" onclick="toggleTheme()">Change</button>
+        </div>
+    </header>
+
+    <!-- 主頁內容 -->
+    <section class="hero">
+        <div class="overlay">
+            <h1>Sanxian's Blog</h1>
+            <p>分享我的技術筆記和生活觀察</p>
+        </div>
+    </section>
+
+    <!-- 內容區域 -->
+    <main class="content">
+        <section>
+            <h2>● 最近的文章</h2>
+            <h1>微軟再發新AI！多模態大型語言模型 Kosmos-1</h1>
+            <p>KOSMOS-1 是微軟研究團隊提出的多模態大型語言模型（MLLM），旨在將感知能力與語言模型結合，推進人工通用智能的發展。</p>
+        
+            <h2>KOSMOS-1 設計架構與實現</h2>
+            <p>KOSMOS-1 的核心是一種基於 Transformer 的因果語言模型。該模型不僅能夠處理文本數據，還可以處理圖像等其他模態數據。設計思路是通過將不同模態的數據編碼為統一的向量表示，並使用 Transformer 解碼器對這些向量進行處理，實現多模態感知和語言生成。</p>
+        
+            <h2>輸入表示</h2>
+            <p>在 KOSMOS-1 中，輸入數據被平鋪為一個序列，並使用特殊的標記符號進行分隔。例如：</p>
+                <ul>
+                    <li>文本輸入表示為「<code>&lt;s&gt; 文檔 &lt;/s&gt;</code>」</li>
+                    <li>圖文混合輸入表示為「<code>&lt;s&gt; 段落 &lt;image&gt; 圖像嵌入 &lt;/image&gt; 段落 &lt;/s&gt;</code>」</li>
+                </ul>
+            <p>這種統一的表示方式使模型能夠靈活處理多種類型的輸入數據。</p>
+        
+            <h2>多模態訓練</h2>
+            <p>為了訓練 KOSMOS-1，研究團隊使用了大規模的多模態語料庫，包括：</p>
+                <ul>
+                    <li>單模態數據（如文本語料）</li>
+                    <li>跨模態配對數據（如圖像-字幕）</li>
+                    <li>交錯的多模態數據（如包含圖像和文本的文檔）</li>
+                </ul>
+            <p>通過這些數據的訓練，模型學會了對多模態數據的感知和處理，能夠在零樣本和少量樣本的情況下執行多種任務。</p>
+        
+            <h2>實驗與評估</h2>
+            <p>研究團隊對 KOSMOS-1 在多種任務設置下進行了評估，包括語言任務、感知-語言任務和視覺任務。實驗結果顯示，KOSMOS-1 在以下幾個方面表現出色：</p>
+                <ol>
+                    <li><strong>語言理解與生成</strong>：模型在無 OCR 的 NLP 任務中表現優異，能夠直接處理文檔圖像並生成相應的文本輸出。</li>
+                    <li><strong>感知-語言任務</strong>：在多模態對話、圖像字幕生成和視覺問答等任務中，KOSMOS-1 展示了強大的感知和理解能力。</li>
+                    <li><strong>視覺任務</strong>：在帶有描述的圖像識別任務中，模型能夠通過文本指令進行準確的分類。</li>
+                </ol>
+            <p>此外，模型展示了跨模態遷移的能力，提升整體性能。</p>
+                
+                
+                參考來自 Microsoft:<a href="https://gpt3demo.com/apps/microsoft-kosmos-1">KOSMOS-1</a>
+            
+                
+            <h2>結論</h2>
+            <p>KOSMOS-1 的提出標誌著多模態大型語言模型研究的一個重要里程碑。通過將感知能力與語言模型相結合，KOSMOS-1 不僅拓展了語言模型的應用範圍，還為實現人工通用智能提供了新的可能性。未來，隨著更多數據和更先進技術的引入，MLLMs 有望在更多高價值領域（如機器人、文檔智能）中發揮重要作用。</p>
+            <img src="Kosmos1.png" alt="kosmos-1" class="styled-image">    
+            
+        </section>
+    </main>
+    <footer>
+        <p>
+            <a href="https://github.com/ban38">MY GitHub</a> 
+            <a href="https://www.instagram.com/11_Sanxian/?hl=zh-tw">Follow IG @11_Sanxian</a>
+        </p>
+        <p>&copy; 2024 Sanxian . 保留所有權利.</p>
+    </footer>
+</body>
+</html>
